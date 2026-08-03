@@ -21,9 +21,92 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+body {
+  display: flex;
+  place-items: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#sun-graphic {
+  animation: spin 20s linear infinite;
+  transform-origin: center;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh);
+    opacity: 0.2;
+  }
+}
+
+.raindrop {
+  animation: fall 1s linear infinite;
+}
+
+/* Stagger animation delays for continuous rainfall */
+.rd-1 {
+  animation-delay: 0s;
+}
+.rd-2 {
+  animation-delay: 0.2s;
+}
+.rd-3 {
+  animation-delay: 0.4s;
+}
+.rd-4 {
+  animation-delay: 0.6s;
+}
+.rd-5 {
+  animation-delay: 0.8s;
+}
+.rd-6 {
+  animation-delay: 1s;
+}
+
+@keyframes float-cloud {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.cloud-item {
+  animation: float-cloud ease-in-out infinite;
+}
+
+/* Stagger floating speeds for realistic effect */
+.c-delay-1 {
+  animation-duration: 6s;
+  animation-delay: 0s;
+}
+.c-delay-2 {
+  animation-duration: 8s;
+  animation-delay: 1s;
+}
+.c-delay-3 {
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+.c-delay-4 {
+  animation-duration: 9s;
+  animation-delay: 0.5s;
 }
