@@ -1,13 +1,15 @@
 <script setup></script>
 
 <template>
-  <div class="el">
+  <div class="base-dashboard">
     <slot>컨텐츠가 존재하지 않습니다.</slot>
   </div>
 </template>
 
 <style scoped>
-.el {
+.base-dashboard {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.45);
 
   backdrop-filter: blur(12px);
@@ -20,5 +22,6 @@
   margin: 10px;
   border-radius: 5px;
   padding: 20px;
+  width: 75vw;
 }
 </style>

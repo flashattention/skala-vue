@@ -1,21 +1,25 @@
 <script setup>
 import backgroundWeather from '@/utils/backgroundWeather'
 import { ref, computed, watch, watchEffect } from 'vue'
-import BaseDashboardCard from './BaseDashboardCard.vue'
-import SearchBar from './SearchBar.vue'
-import WeatherCard from './WeatherCard.vue'
+import BaseDashboardCard from '../components/exercise/BaseDashboardCard.vue'
+import SearchBar from '../components/exercise/SearchBar.vue'
+import WeatherCard from '../components/exercise/WeatherCard.vue'
+import router from '@/router/index.js'
+import { useWeatherStore } from '@/stores/weatherStore.js'
 
-const weatherList = ref([
-  { id: 'city_01', name: '서울', temp: 28, status: '맑음' },
-  { id: 'city_02', name: '수원', temp: 24, status: '비' },
-  { id: 'city_03', name: '부산', temp: 26, status: '구름' },
-])
+const weatherStore = useWeatherStore()
 
 const searchQuery = ref('')
 const selectedCityInfo = ref(null)
 
+setTimeout(() => {
+  console.log(weatherStore.cityWeathers)
+}, 1000)
+
 const filteredWeatherList = computed(() => {
-  return weatherList.value.filter((item) => item.name.includes(searchQuery.value.trim()))
+  return weatherStore.cityWeathers.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.value.trim().toLowerCase()),
+  )
 })
 
 watch(
@@ -27,11 +31,11 @@ watch(
 )
 
 watch(
-  () => selectedCityInfo.value?.status,
+  () => selectedCityInfo.value?.condition,
   (status) => {
-    if (status === '맑음') backgroundWeather.sunny()
-    else if (status === '비') backgroundWeather.rainy()
-    else if (status === '구름') backgroundWeather.cloudy()
+    if (status === 'Clear') backgroundWeather.sunny()
+    else if (status === 'Rain') backgroundWeather.rainy()
+    else if (status === 'Clouds') backgroundWeather.cloudy()
   },
 )
 
@@ -50,19 +54,17 @@ const handleSelectCard = (city) => {
 }
 
 const handleClickDetail = (city) => {
-  window.alert(`${city.name}의 현재 날씨는 [${city.status}] 상태입니다.`)
+  router.push('/weather/' + city.id)
 }
 </script>
 
 <template>
   <div class="block">
-    <h1>Weather</h1>
-
     <BaseDashboardCard>
       <SearchBar :search-query="searchQuery" @update-query="handleUpdateSearchQuery" />
     </BaseDashboardCard>
 
-    <BaseDashboardCard v-if="filteredWeatherList.length > 0">
+    <BaseDashboardCard v-if="filteredWeatherList?.length > 0">
       <h3>지역별 날씨 현황</h3>
       <WeatherCard
         v-for="city in filteredWeatherList"
@@ -86,7 +88,6 @@ const handleClickDetail = (city) => {
 .block {
   display: flex;
   flex-direction: column;
-  width: 80vw;
   color: rgba(255, 255, 255, 0.9);
   h1 {
     text-align: center;

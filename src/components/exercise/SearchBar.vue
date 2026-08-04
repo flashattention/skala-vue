@@ -17,7 +17,7 @@ const sendUpdateQuery = (payload) => {
   <input
     :value="searchQuery"
     @input="sendUpdateQuery($event.target.value)"
-    placeholder="검색할 도시 이름 입력"
+    placeholder="Type a city name to search for..."
   />
   <p>검색 중인 도시: {{ searchQuery }}</p>
 </template>
@@ -31,5 +31,6 @@ input {
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 5px;
   color: inherit;
+  padding-left: 7px;
 }
 </style>
