@@ -13,12 +13,12 @@
   background-color: rgba(0, 0, 0, 0.1);
 
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
   color: #ffffff;
-  margin: 10px;
+  margin-bottom: 10px;
   border-radius: 5px;
   padding: 20px;
-  width: 75vw;
+  width: 100%;
+  max-width: 100%;
 }
 </style>

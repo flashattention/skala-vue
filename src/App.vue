@@ -19,7 +19,7 @@ onMounted(() => {
 <template>
   <TheBackground :city-id="cityId" :weather="weather" />
   <div class="app">
-    <h1>세계 날씨</h1>
+    <h1>World Weather</h1>
     <BaseDashboardCard
       ><div>
         <RouterLink to="/">Home</RouterLink>
@@ -47,7 +47,8 @@ onMounted(() => {
   position: relative;
   z-index: 1;
   height: 80vh;
-  overflow: scroll;
+  width: 60vw;
+  overflow-y: scroll;
   scrollbar-color: #888888 transparent;
   h1 {
     text-align: center;
