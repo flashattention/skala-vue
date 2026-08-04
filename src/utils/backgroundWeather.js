@@ -5,15 +5,12 @@ const setBg = (color) => {
 }
 
 const renderSun = () => {
-  // Remove existing weather graphics if any
   const existingGraphic = document.getElementById('weather-graphic')
   if (existingGraphic) existingGraphic.remove()
 
-  // Create wrapper
   const container = document.createElement('div')
   container.id = 'sun-graphic'
 
-  // Insert Sun SVG with gradient & glowing rays
   container.innerHTML = `
     <svg viewBox="0 0 200 200" width="360" height="360">
       <defs>
@@ -48,7 +45,6 @@ const renderSun = () => {
     </svg>
   `
 
-  // Position at top right
   Object.assign(container.style, {
     position: 'fixed',
     top: '-180px',
@@ -70,8 +66,50 @@ const renderSun = () => {
             <stop offset="0%" stop-color="#7CB342" />
             <stop offset="100%" stop-color="#33691E" />
           </linearGradient>
+          <g id="calf-shape">
+          <!-- 다리 (4개) -->
+          <rect x="8" y="22" width="3" height="12" fill="#5D4037" rx="1" />
+          <rect x="15" y="22" width="3" height="12" fill="#3E2723" rx="1" />
+          <rect x="28" y="22" width="3" height="12" fill="#5D4037" rx="1" />
+          <rect x="35" y="22" width="3" height="12" fill="#3E2723" rx="1" />
+          <!-- 몸통 (얼룩무늬 흰소) -->
+          <ellipse cx="24" cy="18" rx="16" ry="10" fill="#FFFFFF" />
+          <circle cx="18" cy="15" r="4" fill="#3E2723" /> <!-- 얼룩 1 -->
+          <circle cx="28" cy="20" r="3" fill="#3E2723" /> <!-- 얼룩 2 -->
+          <!-- 머리 & 귀 -->
+          <circle cx="36" cy="10" r="7" fill="#FFFFFF" />
+          <ellipse cx="38" cy="12" rx="3" ry="2" fill="#FFCDD2" /> <!-- 주둥이 -->
+          <path d="M 32 5 Q 30 2 34 4" stroke="#5D4037" stroke-width="2" fill="none" /> <!-- 귀 -->
+          <!-- 꼬리 -->
+          <path d="M 8 16 Q 4 20 6 25" stroke="#5D4037" stroke-width="1.5" fill="none" />
+        </g>
         </defs>
         <path d="M -100 200 Q 500 20 1100 200 Z" fill="url(#ground-grad)" />
+        <!-- 송아지들 (동산 곡선 Y축 위치 맞춰 배치) -->
+      <!-- 송아지 1 (중앙 언덕) -->
+      <g class="calf calf-1" y="65">
+        <use href="#calf-shape" class="calf-body" x="0" y="127" transform="scale(1.2)" />
+      </g>
+      <!-- 송아지 2 (반대 방향) -->
+      <g class="calf calf-2">
+        <use href="#calf-shape" class="calf-body" x="0" y="127" transform="scale(0.9)" />
+      </g>
+      <!-- 송아지 3 (작은 아기 송아지) -->
+      <g class="calf calf-3">
+        <use href="#calf-shape" class="calf-body" x="0" y="145" transform="scale(0.7)" />
+      </g>
+      <!-- 송아지 4 (중앙 언덕) -->
+      <g class="calf calf-4" y="65">
+        <use href="#calf-shape" class="calf-body" x="0" y="122" transform="scale(1.2)" />
+      </g>
+      <!-- 송아지 5 (반대 방향) -->
+      <g class="calf calf-5">
+        <use href="#calf-shape" class="calf-body" x="0" y="130" transform="scale(0.9)" />
+      </g>
+      <!-- 송아지 6 (작은 아기 송아지) -->
+      <g class="calf calf-6">
+        <use href="#calf-shape" class="calf-body" x="0" y="150" transform="scale(0.7)" />
+      </g>
       </svg>
     `
     Object.assign(ground.style, {
@@ -100,7 +138,7 @@ const renderRain = () => {
 
   for (let i = 0; i < dropCount; i++) {
     const x = Math.floor(Math.random() * (window.innerWidth + 300))
-    const y = Math.floor(Math.random() * (window.innerHeight + 300)) - 300
+    const y = Math.floor(Math.random() * (window.innerHeight + 300)) - 500
     const delayClass = `rd-${(i % 6) + 1}`
     dropsHTML += `<line class="raindrop ${delayClass}" x1="${x}" y1="${y}" x2="${x - 3}" y2="${y + 8}" />`
   }
@@ -121,7 +159,6 @@ const renderRain = () => {
     </svg>
   `
 
-  // Position container full screen
   Object.assign(container.style, {
     position: 'fixed',
     top: '0',
@@ -143,24 +180,22 @@ const renderCloud = () => {
   const container = document.createElement('div')
   container.id = 'cloud-graphic'
 
-  // 10 fixed, well-balanced positions (% of screen width & height)
   const cloudConfigs = [
-    { xPct: -0.05, yPct: 0.05, scale: 1.8, opacity: 0.85 }, // Top Left edge
-    { xPct: 0.18, yPct: 0.22, scale: 1.3, opacity: 0.75 }, // Upper Left
-    { xPct: 0.38, yPct: 0.08, scale: 2.0, opacity: 0.9 }, // Top Center
-    { xPct: 0.6, yPct: 0.25, scale: 1.4, opacity: 0.8 }, // Upper Mid-Right
-    { xPct: 0.82, yPct: 0.06, scale: 1.9, opacity: 0.85 }, // Top Right edge
-    { xPct: 0.05, yPct: 0.45, scale: 1.5, opacity: 0.8 }, // Mid-Left
-    { xPct: 0.28, yPct: 0.52, scale: 1.2, opacity: 0.7 }, // Mid-Center
-    { xPct: 0.52, yPct: 0.48, scale: 1.7, opacity: 0.85 }, // Mid-Right
-    { xPct: 0.75, yPct: 0.4, scale: 1.3, opacity: 0.75 }, // Right Center
-    { xPct: 0.9, yPct: 0.58, scale: 1.6, opacity: 0.8 }, // Far Right Lower
+    { xPct: -0.05, yPct: 0.05, scale: 1.8, opacity: 0.85 },
+    { xPct: 0.18, yPct: 0.22, scale: 1.3, opacity: 0.75 },
+    { xPct: 0.38, yPct: 0.08, scale: 2.0, opacity: 0.9 },
+    { xPct: 0.6, yPct: 0.25, scale: 1.4, opacity: 0.8 },
+    { xPct: 0.82, yPct: 0.06, scale: 1.9, opacity: 0.85 },
+    { xPct: 0.05, yPct: 0.45, scale: 1.5, opacity: 0.8 },
+    { xPct: 0.28, yPct: 0.52, scale: 1.2, opacity: 0.7 },
+    { xPct: 0.52, yPct: 0.48, scale: 1.7, opacity: 0.85 },
+    { xPct: 0.75, yPct: 0.4, scale: 1.3, opacity: 0.75 },
+    { xPct: 0.9, yPct: 0.58, scale: 1.6, opacity: 0.8 },
   ]
 
   let cloudsHTML = ''
 
   cloudConfigs.forEach((config, i) => {
-    // Calculate exact pixel values based on current window size
     const x = Math.floor(window.innerWidth * config.xPct)
     const y = Math.floor(window.innerHeight * config.yPct)
     const delayClass = `c-delay-${(i % 4) + 1}`
@@ -203,7 +238,6 @@ const renderCloud = () => {
     </svg>
   `
 
-  // Position container full screen
   Object.assign(container.style, {
     position: 'fixed',
     top: '0',

@@ -110,3 +110,76 @@ body {
   animation-duration: 9s;
   animation-delay: 0.5s;
 }
+
+/* 좌에서 우로 이동 */
+@keyframes walk-right {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(1100px);
+  }
+}
+
+/* 우에서 좌로 이동 (ScaleX로 방향 뒤집기) */
+@keyframes walk-left {
+  0% {
+    transform: translateX(1100px) scaleX(-1);
+  }
+  100% {
+    transform: translateX(-100px) scaleX(-1);
+  }
+}
+
+/* 걷는 느낌을 주는 상하 바운스 모션 */
+@keyframes calf-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.calf {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.calf-body {
+  animation: calf-bounce 0.6s ease-in-out infinite;
+}
+
+/* 속도 및 지연 시간 설정 */
+.calf-1 {
+  animation-name: walk-right;
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+.calf-2 {
+  animation-name: walk-left;
+  animation-duration: 22s;
+  animation-delay: 4s;
+}
+.calf-3 {
+  animation-name: walk-right;
+  animation-duration: 25s;
+  animation-delay: 10s;
+}
+.calf-4 {
+  animation-name: walk-left;
+  animation-duration: 18s;
+  animation-delay: 8s;
+}
+.calf-5 {
+  animation-name: walk-right;
+  animation-duration: 22s;
+  animation-delay: 6s;
+}
+.calf-6 {
+  animation-name: walk-left;
+  animation-duration: 25s;
+  animation-delay: 12s;
+}
