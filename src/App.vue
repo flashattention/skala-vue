@@ -19,7 +19,7 @@ onMounted(() => {
 <template>
   <TheBackground :city-id="cityId" :weather="weather" />
   <div class="app">
-    <h1>World Weather</h1>
+    <h1>세계 날씨</h1>
     <BaseDashboardCard
       ><div>
         <RouterLink to="/">Home</RouterLink>
