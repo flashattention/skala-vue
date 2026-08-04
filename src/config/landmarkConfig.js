@@ -1,0 +1,61 @@
+export const cityLandmarkMap = {
+  city_01: 'seoul',
+  city_02: 'tokyo',
+  city_03: 'beijing',
+  city_04: 'bangkok',
+  city_05: 'singapore',
+  city_06: 'sydney',
+  city_07: 'london',
+  city_08: 'paris',
+  city_09: 'berlin',
+  city_10: 'rome',
+  city_11: 'newyork',
+  city_12: 'la',
+  city_13: 'toronto',
+  city_14: 'saopaulo',
+  city_15: 'buenosaires',
+  city_16: 'cairo',
+  city_17: 'dubai',
+  city_18: 'mumbai',
+  city_19: 'istanbul',
+  city_20: 'capetown',
+}
+
+export const landmarkPlacementConfigs = {
+  city_01: { bottom: '-10vw', right: '0', width: '100vw' },
+  city_02: { bottom: '-10vw', right: '0', width: '100vw' },
+  city_03: { bottom: '0', left: '10vw', width: '80vw' },
+  city_04: { bottom: '-5vw', right: '0', width: '100vw' },
+  city_05: { bottom: '-5vw', left: '5vw', width: '90vw' },
+  city_06: { bottom: '-4vw', left: '10vw', width: '80vw' },
+  city_07: { bottom: '0', right: '10vw', width: '80vw' },
+  city_08: { bottom: '2vw', left: '10vw', width: '80vw' },
+  city_09: { bottom: '-3vw', right: '10vw', width: '80vw' },
+  city_10: { bottom: '-3vw', left: '10vw', width: '80vw' },
+  city_11: { bottom: '-5vw', left: '10vw', width: '80vw' },
+  city_12: { bottom: '-5vw', left: '0', width: '100vw' },
+  city_13: { bottom: '-5vw', left: '10vw', width: '80vw' },
+  city_14: { bottom: '-3vw', left: '10vw', width: '80vw' },
+  city_15: { bottom: '-5vw', left: '10vw', width: '80vw' },
+  city_16: { bottom: '-8vw', left: '0', width: '100vw' },
+  city_17: { bottom: '2vw', left: '10vw', width: '80vw' },
+  city_18: { bottom: '-5vw', left: '10vw', width: '80vw' },
+  city_19: { bottom: '-3vw', left: '10vw', width: '80vw' },
+  city_20: { bottom: '-10vw', left: '0', width: '100vw' },
+}
+
+export const cloudConfigs = [
+  { xPct: -0.05, yPct: 0.05, scale: 1.8, opacity: 0.85 },
+  { xPct: 0.18, yPct: 0.22, scale: 1.3, opacity: 0.75 },
+  { xPct: 0.38, yPct: 0.08, scale: 2.0, opacity: 0.9 },
+  { xPct: 0.6, yPct: 0.25, scale: 1.4, opacity: 0.8 },
+  { xPct: 0.82, yPct: 0.06, scale: 1.9, opacity: 0.85 },
+  { xPct: 0.05, yPct: 0.45, scale: 1.5, opacity: 0.8 },
+  { xPct: 0.28, yPct: 0.52, scale: 1.2, opacity: 0.7 },
+  { xPct: 0.52, yPct: 0.48, scale: 1.7, opacity: 0.85 },
+  { xPct: 0.75, yPct: 0.4, scale: 1.3, opacity: 0.75 },
+  { xPct: 0.9, yPct: 0.58, scale: 1.6, opacity: 0.8 },
+]
+
+export const CLOUD_PATH =
+  'M 40 100 A 28 28 0 0 1 65 55 A 38 38 0 0 1 135 50 A 30 30 0 0 1 165 90 A 22 22 0 0 1 155 115 A 15 15 0 0 1 140 120 L 45 120 A 20 20 0 0 1 40 100 Z'

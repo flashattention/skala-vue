@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Base Building -->
+  <rect x="220" y="320" width="360" height="180" fill="#9a3412"/>
+  <!-- Domes -->
+  <path d="M 300 320 A 100 100 0 0 1 500 320 Z" fill="#ea580c"/>
+  <path d="M 240 320 A 60 60 0 0 1 340 320 Z" fill="#c2410c"/>
+  <path d="M 460 320 A 60 60 0 0 1 560 320 Z" fill="#c2410c"/>
+  <!-- Minarets -->
+  <rect x="170" y="180" width="16" height="320" fill="#cbd5e1"/>
+  <polygon points="170,180 178,110 186,180" fill="#64748b"/>
+  <rect x="610" y="180" width="16" height="320" fill="#cbd5e1"/>
+  <polygon points="610,180 618,110 626,180" fill="#64748b"/>
+</svg>

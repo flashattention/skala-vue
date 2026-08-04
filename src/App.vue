@@ -1,10 +1,15 @@
 <script setup>
 import BaseDashboardCard from './components/exercise/BaseDashboardCard.vue'
+import TheBackground from './components/TheBackground.vue'
 import { onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useWeatherStore } from '@/stores/weatherStore'
+import { useBackgroundStore } from '@/stores/backgroundStore'
 import UnitToggle from './components/exercise/UnitToggle.vue'
 
 const weatherStore = useWeatherStore()
+const backgroundStore = useBackgroundStore()
+const { cityId, weather } = storeToRefs(backgroundStore)
 
 onMounted(() => {
   weatherStore.fetchAllCityWeathers()
@@ -12,8 +17,9 @@ onMounted(() => {
 </script>
 
 <template>
+  <TheBackground :city-id="cityId" :weather="weather" />
   <div class="app">
-    <h1>Weather App</h1>
+    <h1>세계 날씨</h1>
     <BaseDashboardCard
       ><div>
         <RouterLink to="/">Home</RouterLink>
@@ -38,7 +44,11 @@ onMounted(() => {
 
 <style scoped>
 .app {
-  height: 90vh;
+  position: relative;
+  z-index: 1;
+  height: 80vh;
+  overflow: scroll;
+  scrollbar-color: #888888 transparent;
   h1 {
     text-align: center;
   }

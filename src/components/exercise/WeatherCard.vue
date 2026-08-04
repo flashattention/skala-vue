@@ -68,7 +68,7 @@ const displayTemp = computed(() => {
   padding: 16px 20px;
   border-radius: 12px;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

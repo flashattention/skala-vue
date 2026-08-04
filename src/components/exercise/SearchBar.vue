@@ -28,7 +28,7 @@ input {
   height: 40px;
   font-size: 24px;
   background-color: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid transparent;
   border-radius: 5px;
   color: inherit;
   padding-left: 7px;

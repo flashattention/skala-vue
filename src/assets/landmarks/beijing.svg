@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Marble Base Terraces -->
+  <rect x="150" y="500" width="500" height="40" fill="#e2e8f0"/>
+  <rect x="200" y="460" width="400" height="40" fill="#cbd5e1"/>
+  <rect x="250" y="420" width="300" height="40" fill="#94a3b8"/>
+  <!-- Main Pillars & Building Base -->
+  <rect x="290" y="300" width="220" height="120" fill="#dc2626"/>
+  <!-- Tier 1 Roof -->
+  <path d="M220 300 Q400 270 580 300 L550 270 Q400 250 250 270 Z" fill="#2563eb"/>
+  <!-- Tier 2 Wall & Roof -->
+  <rect x="320" y="200" width="160" height="70" fill="#dc2626"/>
+  <path d="M260 200 Q400 170 540 200 L510 170 Q400 150 290 170 Z" fill="#2563eb"/>
+  <!-- Tier 3 Top Roof -->
+  <path d="M310 150 Q400 110 490 150 L400 80 Z" fill="#1d4ed8"/>
+  <!-- Golden Finial -->
+  <circle cx="400" cy="70" r="14" fill="#fbbf24"/>
+</svg>

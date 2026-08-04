@@ -1,6 +1,6 @@
 <script setup>
-import backgroundWeather from '@/utils/backgroundWeather'
 import { ref, computed, watch, watchEffect } from 'vue'
+import { useBackgroundStore } from '@/stores/backgroundStore'
 import BaseDashboardCard from '../components/exercise/BaseDashboardCard.vue'
 import SearchBar from '../components/exercise/SearchBar.vue'
 import WeatherCard from '../components/exercise/WeatherCard.vue'
@@ -8,6 +8,7 @@ import router from '@/router/index.js'
 import { useWeatherStore } from '@/stores/weatherStore.js'
 
 const weatherStore = useWeatherStore()
+const backgroundStore = useBackgroundStore()
 
 const searchQuery = ref('')
 const selectedCityInfo = ref(null)
@@ -31,11 +32,11 @@ watch(
 )
 
 watch(
-  () => selectedCityInfo.value?.condition,
-  (status) => {
-    if (status === 'Clear') backgroundWeather.sunny()
-    else if (status === 'Rain') backgroundWeather.rainy()
-    else if (status === 'Clouds') backgroundWeather.cloudy()
+  () => selectedCityInfo.value,
+  (city) => {
+    if (!city) return
+    backgroundStore.setCityId(city.id)
+    backgroundStore.setWeatherFromCondition(city.condition)
   },
 )
 

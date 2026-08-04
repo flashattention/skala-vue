@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Base Plaza -->
+  <ellipse cx="400" cy="520" rx="300" ry="40" fill="#15803d"/>
+  <!-- Obelisk Base -->
+  <polygon points="340,520 460,520 440,480 360,480" fill="#cbd5e1"/>
+  <!-- Main Shaft -->
+  <polygon points="360,480 440,480 415,100 385,100" fill="#f8fafc"/>
+  <polygon points="400,480 440,480 415,100 400,100" fill="#e2e8f0"/>
+  <!-- Pyramidion Top -->
+  <polygon points="385,100 415,100 400,40" fill="#f8fafc"/>
+</svg>

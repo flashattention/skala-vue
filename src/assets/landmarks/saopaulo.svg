@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- X-shaped Bridge Tower -->
+  <line x1="250" y1="520" x2="550" y2="120" stroke="#e2e8f0" stroke-width="28"/>
+  <line x1="550" y1="520" x2="250" y2="120" stroke="#e2e8f0" stroke-width="28"/>
+  <!-- Cable Stay Lines -->
+  <g stroke="#f59e0b" stroke-width="2" opacity="0.9">
+    <line x1="400" y1="220" x2="150" y2="450"/>
+    <line x1="400" y1="250" x2="200" y2="450"/>
+    <line x1="400" y1="280" x2="250" y2="450"/>
+    <line x1="400" y1="220" x2="650" y2="450"/>
+    <line x1="400" y1="250" x2="600" y2="450"/>
+    <line x1="400" y1="280" x2="550" y2="450"/>
+  </g>
+  <!-- Road Deck -->
+  <rect x="50" y="440" width="700" height="20" fill="#334155"/>
+</svg>

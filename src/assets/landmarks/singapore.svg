@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Tower 1 -->
+  <path d="M180 500 L200 220 L230 220 L250 500 Z" fill="#475569"/>
+  <!-- Tower 2 -->
+  <path d="M350 500 L370 220 L400 220 L420 500 Z" fill="#475569"/>
+  <!-- Tower 3 -->
+  <path d="M520 500 L540 220 L570 220 L590 500 Z" fill="#475569"/>
+  <!-- Glass Reflections -->
+  <path d="M205 230 L225 230 L245 490 L225 490 Z" fill="#38bdf8" opacity="0.8"/>
+  <path d="M375 230 L395 230 L415 490 L395 490 Z" fill="#38bdf8" opacity="0.8"/>
+  <path d="M545 230 L565 230 L585 490 L565 490 Z" fill="#38bdf8" opacity="0.8"/>
+  <!-- SkyPark Skyship Structure -->
+  <path d="M120 220 C 120 200, 650 180, 660 220 L640 235 L140 235 Z" fill="#f8fafc"/>
+  <path d="M630 190 Q670 190 680 220 Z" fill="#10b981"/>
+</svg>

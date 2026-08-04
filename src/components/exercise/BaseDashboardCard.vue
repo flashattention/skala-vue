@@ -10,10 +10,7 @@
 .base-dashboard {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.45);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.1);
 
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);

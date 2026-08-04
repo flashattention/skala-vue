@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Central Spire -->
+  <path d="M 350 550 L 380 300 L 390 150 L 398 50 L 402 50 L 410 150 L 420 300 L 450 550 Z" fill="#38bdf8"/>
+  <!-- Tiered Stepping Wings -->
+  <rect x="330" y="480" width="140" height="70" fill="#0284c7"/>
+  <rect x="345" y="400" width="110" height="80" fill="#0369a1"/>
+  <rect x="360" y="310" width="80" height="90" fill="#0284c7"/>
+  <rect x="375" y="210" width="50" height="100" fill="#0369a1"/>
+  <!-- Top Needle -->
+  <line x1="400" y1="50" x2="400" y2="10" stroke="#cbd5e1" stroke-width="2"/>
+</svg>

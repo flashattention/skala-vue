@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Main Arch Structure -->
+  <rect x="200" y="220" width="400" height="280" fill="#d97706"/>
+  <!-- Central Arch Passageway (Hollow transparent path) -->
+  <path d="M 320 500 L 320 340 A 80 80 0 0 1 480 340 L 480 500 Z" fill="#ffffff" opacity="0.1"/>
+  <!-- Side Arches -->
+  <path d="M 230 500 L 230 400 A 30 30 0 0 1 290 400 L 290 500 Z" fill="#ffffff" opacity="0.1"/>
+  <path d="M 510 500 L 510 400 A 30 30 0 0 1 570 400 L 570 500 Z" fill="#ffffff" opacity="0.1"/>
+  <!-- Domes -->
+  <path d="M 210 220 A 40 40 0 0 1 290 220 Z" fill="#b45309"/>
+  <path d="M 510 220 A 40 40 0 0 1 590 220 Z" fill="#b45309"/>
+  <path d="M 350 220 A 50 50 0 0 1 450 220 Z" fill="#f59e0b"/>
+</svg>

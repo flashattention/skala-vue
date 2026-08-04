@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- CN Tower Main Shaft -->
+  <path d="M 370 550 L 392 220 L 408 220 L 430 550 Z" fill="#94a3b8"/>
+  <!-- Center Pillar -->
+  <rect x="395" y="100" width="10" height="450" fill="#cbd5e1"/>
+  <!-- SkyPod (Main Observation Deck) -->
+  <path d="M 350 220 L 450 220 L 430 180 L 370 180 Z" fill="#ef4444"/>
+  <rect x="365" y="180" width="70" height="15" fill="#f8fafc"/>
+  <!-- Upper Space Deck -->
+  <path d="M 380 130 L 420 130 L 410 110 L 390 110 Z" fill="#ef4444"/>
+  <!-- Antenna Needle -->
+  <line x1="400" y1="110" x2="400" y2="30" stroke="#64748b" stroke-width="4"/>
+</svg>
