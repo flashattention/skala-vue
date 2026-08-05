@@ -1,5 +1,7 @@
 # skala-vue
 
+https://skala-vue-delta.vercel.app/
+
 ![App Screenshot](public/images/screenshot.png)
 
 A Vue 3 + Vite weather dashboard that fetches city weather data from OpenWeather and displays search, selection, and detail views.
