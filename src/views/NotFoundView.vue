@@ -4,9 +4,14 @@ import BaseDashboardCard from '@/components/exercise/BaseDashboardCard.vue'
 
 <template>
   <BaseDashboardCard
-    >404 Error<br />Page not found
-    <RouterLink to="/">메인 대시보드로 돌아가기</RouterLink></BaseDashboardCard
+    >[404 Error]<br />Page not found
+    <RouterLink to="/">Go back to the main dashboard</RouterLink></BaseDashboardCard
   >
 </template>
 
-<style scoped></style>
+<style scoped>
+.base-dashboard {
+  font-size: 24px;
+  text-align: center;
+}
+</style>
