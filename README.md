@@ -2,6 +2,8 @@
 
 A Vue 3 + Vite weather dashboard that fetches city weather data from OpenWeather and displays search, selection, and detail views.
 
+![App Screenshot](public/images/screenshot.png)
+
 ## Features
 
 - Vue 3 + Vite application
