@@ -75,10 +75,10 @@ const handleClickDetail = (city) => {
       />
     </BaseDashboardCard>
 
-    <BaseDashboardCard v-else>일치하는 도시가 없습니다.</BaseDashboardCard>
+    <BaseDashboardCard class="text" v-else>No city matches the keyword.</BaseDashboardCard>
 
-    <BaseDashboardCard class="bottom">
-      <div v-if="!selectedCityInfo?.name">Click the card or search for it...</div>
+    <BaseDashboardCard class="text">
+      <div v-if="!selectedCityInfo?.name">Click the card or search for it.</div>
       <div v-else>{{ selectedCityInfo?.name }} has been selected.</div>
     </BaseDashboardCard>
   </div>
@@ -90,7 +90,7 @@ const handleClickDetail = (city) => {
   flex-direction: column;
   color: rgba(255, 255, 255, 0.9);
 }
-.bottom {
+.text {
   font-size: 20px;
 }
 </style>
