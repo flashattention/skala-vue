@@ -20,7 +20,7 @@ const configStore = useConfigStore()
   p,
   button {
     background-color: rgba(255, 255, 255, 0.5);
-    color: #ffffff;
+    color: rgba(0, 0, 0, 0.3);
     border: none;
     padding: 8px 14px;
     border-radius: 6px;
@@ -35,6 +35,7 @@ const configStore = useConfigStore()
   }
   button {
     background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
   }
 
   @media screen and (max-width: 668px) {
