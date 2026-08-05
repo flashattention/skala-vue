@@ -32,7 +32,7 @@ const displayTemp = computed(() => {
 <template>
   <BaseDashboardCard>
     <div v-if="!selectedCity" class="empty-state">
-      <p>Select a city to check the details.</p>
+      <p>Select a city to check out the details.</p>
     </div>
 
     <div v-else class="detail-container">

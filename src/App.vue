@@ -6,6 +6,7 @@ import { storeToRefs } from 'pinia'
 import { useWeatherStore } from '@/stores/weatherStore'
 import { useBackgroundStore } from '@/stores/backgroundStore'
 import NavBar from './components/NavBar.vue'
+import { VueSpinnerIos } from 'vue3-spinners'
 
 const weatherStore = useWeatherStore()
 const backgroundStore = useBackgroundStore()
@@ -21,8 +22,9 @@ onMounted(() => {
   <h1 class="title">World Weather</h1>
   <div class="app">
     <NavBar />
-    <BaseDashboardCard v-if="weatherStore.loading">
-      Fetching OpenWeather API Data...
+    <BaseDashboardCard class="loading" v-if="weatherStore.loading">
+      <h1>Fetching Data From OpenWeather API...</h1>
+      <VueSpinnerIos size="100" />
     </BaseDashboardCard>
     <BaseDashboardCard v-else-if="weatherStore.error"
       >OpenWeather API Error: {{ weatherStore.error }}</BaseDashboardCard
@@ -47,6 +49,9 @@ onMounted(() => {
   scrollbar-gutter: stable;
   h1 {
     text-align: center;
+  }
+  .loading {
+    align-items: center;
   }
 }
 </style>
