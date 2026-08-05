@@ -6,6 +6,21 @@ https://skala-vue-delta.vercel.app/
 
 A Vue 3 + Vite weather dashboard that fetches city weather data from OpenWeather and displays search, selection, and detail views.
 
+## 어려웠던 점과 해결 과정
+
+- OpenWeather API가 로드될 때 까지 첫 화면이 비어보이던 문제
+  - vue3-spinners 라이브러리를 활용한 로딩 스피너로 사용자 경험 향상
+- app 컴포넌트에 overflow: scroll을 적용하자 y축 뿐만 아니라 x축으로도 scroll이 생기던 문제
+  - app 컴포넌트 내부 요소들의 width가 app 컴포넌트의 width를 초과한다는 것을 깨닫고, 요소들 크기 조정 및 x축 스크롤바가 비어있는 것을 확인 후 overflow-y: scroll로 y축에만 스크롤바가 적용되도록 변경
+- 초기 UI에 blur가 적용되어 있어 각 도시의 랜드마크 배경이 잘 안보이던 문제
+  - 15px로 적용되어 있던 blur 속성을 완전히 제거하여 사용자가 각 도시의 랜드마크를 또렷하게 볼 수 있도록 날씨앱에 맞는 컨셉으로 변경
+- 도시 전환 시 랜드마크 svg 렌더링이 버벅이던 문제
+  - 기존의 js파일로 DOM에 직접 접근하여 DOM 요소를 생성하는 함수들로 작성했던 로직을 TheBackground.vue로 옮기고, vue스러운 방식으로 미리 만들어둔 template 요소들을 script로 조작하고 style을 적용하도록 변경
+- 도시별 랜드마크 SVG의 사이즈가 제각각이어서 일일히 수정해야했던 문제
+  - config/landmarkConfig.js의 landmarkPlacementConfigs에서 각 SVG의 크기와 위치를 설정하는 컨피그 객체를 만들어 해결
+- 언덕과 소들이 화면 width에 따라 height의 변경 없이 width만 늘어나던 문제
+  - 언덕과 소들의 svg 컴포넌트에 적용되어 있던 스타일 속성을 변경하여 상위 컴포넌트의 길이에 따라 높이와 너비가 같이 변하도록 변경
+
 ## Features
 
 - Vue 3 + Vite application
