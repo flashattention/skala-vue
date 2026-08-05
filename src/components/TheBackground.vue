@@ -89,13 +89,16 @@
     </div>
 
     <div class="landmark-layer">
-      <img
-        v-if="currentLandmarkUrl && currentLandmarkConfig"
-        :src="currentLandmarkUrl"
-        class="landmark-svg"
-        :style="currentLandmarkStyle"
-        alt=""
-      />
+      <transition name="fade">
+        <img
+          v-if="currentLandmarkUrl && currentLandmarkConfig"
+          :key="currentLandmarkUrl"
+          :src="currentLandmarkUrl"
+          class="landmark-svg"
+          :style="currentLandmarkStyle"
+          alt=""
+        />
+      </transition>
     </div>
 
     <div class="weather-graphic ground">
@@ -164,9 +167,15 @@ const bgColors = {
 }
 
 const landmarkModules = import.meta.glob('@/assets/landmarks/*.svg', {
-  query: '?url',
+  eager: true,
   import: 'default',
 })
+
+const landmarkMap = {}
+for (const path in landmarkModules) {
+  const filename = path.split('/').pop().replace('.svg', '')
+  landmarkMap[filename] = landmarkModules[path]
+}
 
 const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
 const windowHeight = ref(typeof window !== 'undefined' ? window.innerHeight : 768)
@@ -182,6 +191,7 @@ const currentLandmarkStyle = computed(() => {
     position: 'absolute',
     ...currentLandmarkConfig.value,
     zIndex: 10,
+    willChange: 'opacity',
   }
 })
 
@@ -197,30 +207,19 @@ function generateRaindrops() {
   raindrops.value = drops
 }
 
-async function loadLandmark(newCityId) {
+function loadLandmark(newCityId) {
   if (!newCityId) {
     currentLandmarkUrl.value = null
     return
   }
 
   const landmarkName = cityLandmarkMap[newCityId]
-  if (!landmarkName) {
+  if (!landmarkName || !landmarkMap[landmarkName]) {
     currentLandmarkUrl.value = null
     return
   }
 
-  const modulePath = Object.keys(landmarkModules).find((path) =>
-    path.endsWith(`/assets/landmarks/${landmarkName}.svg`),
-  )
-  const loader = modulePath ? landmarkModules[modulePath] : null
-
-  if (!loader) {
-    console.error(`Landmark SVG not found for ${newCityId} (${landmarkName})`)
-    currentLandmarkUrl.value = null
-    return
-  }
-
-  currentLandmarkUrl.value = await loader()
+  currentLandmarkUrl.value = landmarkMap[landmarkName]
 }
 
 watch(
@@ -232,7 +231,9 @@ watch(
 watch(
   () => props.weather,
   (newWeather) => {
-    if (newWeather === 'rainy') generateRaindrops()
+    if (newWeather === 'rainy' && raindrops.value.length === 0) {
+      generateRaindrops()
+    }
   },
   { immediate: true },
 )
@@ -266,6 +267,7 @@ onUnmounted(() => {
   z-index: -1;
   overflow: hidden;
   transition: background-color 0.5s ease;
+  will-change: background-color;
 }
 
 .weather-graphic {
@@ -281,20 +283,16 @@ onUnmounted(() => {
   transform-origin: center;
 }
 
+.cloud {
+  z-index: 1;
+}
+
 .rain {
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 1;
-}
-
-.cloud {
-  z-index: 1;
-}
-
-.rain {
-  z-index: -10000;
 }
 
 .landmark-layer {
@@ -320,7 +318,7 @@ onUnmounted(() => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.25s ease;
 }
 
 .fade-enter-from,

@@ -16,7 +16,7 @@
 
   color: #ffffff;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 20px;
   width: 100%;
   max-width: 100%;
