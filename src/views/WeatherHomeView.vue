@@ -67,7 +67,7 @@ const handleClickDetail = (city) => {
     </BaseDashboardCard>
 
     <BaseDashboardCard v-if="filteredWeatherList?.length > 0">
-      <h3>지역별 날씨 현황</h3>
+      <h1>World Weathers</h1>
       <WeatherCard
         v-for="city in filteredWeatherList"
         :key="city.id"
@@ -91,9 +91,5 @@ const handleClickDetail = (city) => {
   display: flex;
   flex-direction: column;
   color: rgba(255, 255, 255, 0.9);
-  h1 {
-    text-align: center;
-    color: rgba(0, 0, 0, 0.45);
-  }
 }
 </style>

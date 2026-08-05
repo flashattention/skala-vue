@@ -4,10 +4,16 @@ import BaseDashboardCard from '@/components/exercise/BaseDashboardCard.vue'
 
 <template>
   <BaseDashboardCard>
-    <div class="wrapper">세계의 날씨 정보를 확인할 수 있는 애플리케이션입니다.</div>
+    <div class="wrapper">
+      An application for checking world weathers.
+      <br />
+      <br />
+      Made by
+      <a href="https://github.com/flashattention" target="_blank">flashattention@github.com</a>.
+    </div>
 
     <div class="wrapper">
-      <RouterLink to="/">메인 대시보드로 돌아가기</RouterLink>
+      <RouterLink to="/">Go back to the main dashboard</RouterLink>
     </div>
   </BaseDashboardCard>
 </template>
@@ -16,5 +22,6 @@ import BaseDashboardCard from '@/components/exercise/BaseDashboardCard.vue'
 .wrapper {
   margin: 20px;
   text-align: center;
+  font-size: 24px;
 }
 </style>

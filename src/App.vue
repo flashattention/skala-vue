@@ -5,7 +5,7 @@ import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useWeatherStore } from '@/stores/weatherStore'
 import { useBackgroundStore } from '@/stores/backgroundStore'
-import UnitToggle from './components/exercise/UnitToggle.vue'
+import NavBar from './components/NavBar.vue'
 
 const weatherStore = useWeatherStore()
 const backgroundStore = useBackgroundStore()
@@ -18,20 +18,9 @@ onMounted(() => {
 
 <template>
   <TheBackground :city-id="cityId" :weather="weather" />
-  <h1>World Weather</h1>
+  <h1 class="title">World Weather</h1>
   <div class="app">
-    <BaseDashboardCard class="nav"
-      ><div>
-        <RouterLink to="/">Home</RouterLink>
-      </div>
-      <div>
-        <RouterLink to="/about">About</RouterLink>
-      </div>
-      <div>
-        <RouterLink to="/weather/0">Detail</RouterLink>
-      </div>
-      <UnitToggle />
-    </BaseDashboardCard>
+    <NavBar />
     <BaseDashboardCard v-if="weatherStore.loading">
       Fetching OpenWeather API Data...
     </BaseDashboardCard>
@@ -43,8 +32,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-h1 {
+.title {
   text-align: center;
+  font-size: 50px;
 }
 .app {
   position: relative;
@@ -57,16 +47,6 @@ h1 {
   scrollbar-gutter: stable;
   h1 {
     text-align: center;
-  }
-  .nav {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    div {
-      font-size: 20px;
-      margin-left: 30px;
-    }
   }
 }
 </style>

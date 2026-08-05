@@ -45,7 +45,7 @@ const getCityLocalTime = (timezone) => {
       <div class="city-header">
         <img
           v-if="city.country"
-          :src="`https://flagcdn.com/24x18/${city.country.toLowerCase()}.png`"
+          :src="`https://flagcdn.com/36x27/${city.country.toLowerCase()}.png`"
           :alt="city.country"
           class="flag-img"
         />
@@ -56,13 +56,13 @@ const getCityLocalTime = (timezone) => {
       <div class="weather-info">
         <span class="temp-text">{{ Math.round(displayTemp) }}{{ configStore.unitSymbol }}</span>
         <span class="condition-badge">{{ city.condition }}</span>
-        <span v-if="city.temp >= 25" class="status-badge hot"> 🔥 더움 </span>
-        <span v-else class="status-badge cool"> ❄️ 선선함 </span>
+        <span v-if="city.temp >= 25" class="status-badge hot"> 🔥 Hot </span>
+        <span v-else class="status-badge cool"> ❄️ Fresh </span>
       </div>
     </div>
 
     <div class="right">
-      <button class="detail-btn" @click.stop="sendClickDetail(city)">상세보기</button>
+      <button class="detail-btn" @click.stop="sendClickDetail(city)"><h2>Detail</h2></button>
     </div>
   </div>
 </template>
@@ -101,20 +101,22 @@ const getCityLocalTime = (timezone) => {
 }
 
 .flag-img {
-  width: 20px;
-  height: 15px;
-  border-radius: 2px;
-  object-fit: cover;
+  margin-right: 2px;
 }
 
 .city-name {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #1e293b;
+  margin-right: 2px;
+}
+
+.time {
+  font-size: 2rem;
 }
 
 .condition-badge {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   background-color: white;
   color: rgba(0, 0, 0, 0.7);
   padding: 2px 8px;
@@ -128,13 +130,13 @@ const getCityLocalTime = (timezone) => {
 }
 
 .temp-text {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #0f172a;
 }
 
 .status-badge {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 3px 8px;
   border-radius: 6px;

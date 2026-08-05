@@ -13,13 +13,13 @@ const sendUpdateQuery = (payload) => {
 </script>
 
 <template>
-  <h3>도시 검색</h3>
+  <h1>Search City</h1>
   <input
     :value="searchQuery"
     @input="sendUpdateQuery($event.target.value)"
-    placeholder="Type a city name to search for"
+    placeholder="Type a city name to search for..."
   />
-  <p>검색 중인 도시: {{ searchQuery }}</p>
+  <h2>Searching: {{ searchQuery }}</h2>
 </template>
 
 <style scoped>
@@ -32,5 +32,6 @@ input {
   border-radius: 5px;
   color: inherit;
   padding-left: 7px;
+  font-family: inherit;
 }
 </style>

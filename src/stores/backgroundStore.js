@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import data from '../assets/cities.json'
 
 const conditionToWeather = {
   Clear: 'sunny',
@@ -8,8 +9,8 @@ const conditionToWeather = {
 }
 
 export const useBackgroundStore = defineStore('background', () => {
-  const cityId = ref('city_01')
-  const weather = ref('sunny')
+  const cityId = ref(data[Math.floor(Math.random() * 20)].id)
+  const weather = ref(['sunny', 'cloudy', 'rainy'][Math.floor(Math.random() * 3)])
 
   function setCityId(id) {
     if (id) cityId.value = id

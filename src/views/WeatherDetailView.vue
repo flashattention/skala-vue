@@ -32,13 +32,13 @@ const displayTemp = computed(() => {
 <template>
   <BaseDashboardCard>
     <div v-if="!selectedCity" class="empty-state">
-      <p>날씨 세부 정보를 확인할 지역을 선택해주세요.</p>
+      <p>Select a city to check the details.</p>
     </div>
 
     <div v-else class="detail-container">
       <div class="header">
         <img
-          :src="`https://flagcdn.com/24x18/${selectedCity.country.toLowerCase()}.png`"
+          :src="`https://flagcdn.com/60x45/${selectedCity.country.toLowerCase()}.png`"
           :alt="selectedCity.country"
         />
         <h2>{{ selectedCity.name }}</h2>
@@ -60,22 +60,22 @@ const displayTemp = computed(() => {
 
       <div class="info-grid">
         <div class="info-item">
-          <span class="label">습도</span>
+          <span class="label">Humidity</span>
           <span class="value">{{ selectedCity.humidity }}%</span>
         </div>
         <div class="info-item">
-          <span class="label">위도 (Lat)</span>
+          <span class="label">Latitude</span>
           <span class="value">{{ selectedCity.lat }}</span>
         </div>
         <div class="info-item">
-          <span class="label">경도 (Long)</span>
+          <span class="label">Longitude</span>
           <span class="value">{{ selectedCity.long }}</span>
         </div>
       </div>
     </div>
 
     <div class="router-link-wrapper">
-      <RouterLink to="/">메인 대시보드로 돌아가기</RouterLink>
+      <RouterLink to="/">Go back to the main dashboard</RouterLink>
     </div>
   </BaseDashboardCard>
 </template>
@@ -85,7 +85,7 @@ const displayTemp = computed(() => {
   text-align: center;
   padding: 40px 20px;
   color: #666;
-  font-size: 1.1rem;
+  font-size: 24px;
 }
 
 .detail-container {
@@ -98,6 +98,7 @@ const displayTemp = computed(() => {
 .router-link-wrapper {
   margin: 20px;
   text-align: center;
+  font-size: 24px;
 }
 
 .header {
@@ -107,12 +108,12 @@ const displayTemp = computed(() => {
 }
 
 .flag {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .header h2 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 3rem;
   color: #2c3e50;
 }
 
@@ -121,7 +122,7 @@ const displayTemp = computed(() => {
   color: #475569;
   padding: 2px 8px;
   border-radius: 4px;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -135,8 +136,8 @@ const displayTemp = computed(() => {
 }
 
 .weather-icon {
-  width: 70px;
-  height: 70px;
+  width: 150px;
+  height: 150px;
 }
 
 .temp-display {
@@ -145,14 +146,14 @@ const displayTemp = computed(() => {
 }
 
 .temp-value {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #1e293b;
   line-height: 1;
 }
 
 .condition-text {
-  font-size: 1rem;
+  font-size: 2rem;
   color: #64748b;
   margin-top: 5px;
 }
@@ -173,13 +174,13 @@ const displayTemp = computed(() => {
 }
 
 .info-item .label {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   color: #64748b;
   margin-bottom: 4px;
 }
 
 .info-item .value {
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #0f172a;
 }

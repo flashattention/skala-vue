@@ -6,8 +6,8 @@ const configStore = useConfigStore()
 
 <template>
   <div class="unit-toggle">
-    <p>날씨 단위: {{ configStore.unitSymbol }}</p>
-    <button @click="configStore.toggleUnit()">단위 설정 변경</button>
+    <p>Unit: {{ configStore.unitSymbol }}</p>
+    <button @click="configStore.toggleUnit()">Change Unit</button>
   </div>
 </template>
 
@@ -24,13 +24,14 @@ const configStore = useConfigStore()
     border: none;
     padding: 8px 14px;
     border-radius: 6px;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
     height: 35px;
     display: flex;
     align-items: center;
+    font-family: inherit;
   }
   button {
     background-color: rgba(0, 0, 0, 0.3);
