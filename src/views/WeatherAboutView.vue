@@ -5,7 +5,7 @@ import BaseDashboardCard from '@/components/exercise/BaseDashboardCard.vue'
 <template>
   <BaseDashboardCard>
     <div class="wrapper">
-      An application for checking world weathers.
+      Web application for checking world weathers.
       <br />
       <br />
       Made by
