@@ -1,45 +1,84 @@
 # skala-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue 3 + Vite weather dashboard that fetches city weather data from OpenWeather and displays search, selection, and detail views.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vue 3 + Vite application
+- Pinia state management for weather data and background state
+- Vue Router for home, weather detail, and about pages
+- Fetches weather for predefined cities using OpenWeather API
+- Search filter and city selection with dynamic background styling
+- Loading/error handling for API requests
 
-## Recommended Browser Setup
+## Project structure highlights
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- `src/main.js` — app bootstrap
+- `src/App.vue` — root layout and global loading state
+- `src/router/index.js` — route definitions
+- `src/stores/weatherStore.js` — weather API calls and data storage
+- `src/stores/backgroundStore.js` — selected city background control
+- `src/views/WeatherHomeView.vue` — search and city card dashboard
+- `src/views/WeatherDetailView.vue` — detailed weather view per city
+- `src/assets/cities.json` — predefined city metadata for API queries
 
-## Customize configuration
+## Environment variables
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+This project expects an OpenWeather API key in Vite env variables.
 
-## Project Setup
+Create a `.env` file at the project root with:
+
+```env
+VITE_OPEN_WEATHER_API=your_api_key_here
+```
+
+## Quick start
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+Open the local URL shown in the terminal.
+
+## Build & preview
 
 ```sh
 npm run build
+npm run preview
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Scripts
 
-```sh
-npm run lint
-```
-# skala-vue
+- `npm run dev` — start the Vite development server
+- `npm run build` — build production assets
+- `npm run preview` — locally preview the built app
+- `npm run lint` — run lint scripts (`lint:oxlint` and `lint:eslint`)
+- `npm run format` — format source files with Prettier
+
+## Dependencies
+
+- `vue`
+- `pinia`
+- `vue-router`
+- `axios`
+- `vue3-spinners`
+- `dotenv`
+
+## Development dependencies
+
+- `vite`
+- `eslint`
+- `@eslint/js`
+- `eslint-plugin-vue`
+- `prettier`
+- `oxlint`
+- `npm-run-all2`
+- `vite-plugin-vue-devtools`
+- `vue-eslint-parser`
+
+## Notes
+
+- The weather data is loaded from OpenWeather by latitude/longitude values in `src/assets/cities.json`.
+- Select a city card to update the background and open the detail page.
+- If the API request fails, the app shows an error message.
