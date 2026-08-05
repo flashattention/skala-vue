@@ -17,7 +17,7 @@ const sendUpdateQuery = (payload) => {
   <input
     :value="searchQuery"
     @input="sendUpdateQuery($event.target.value)"
-    placeholder="Type a city name to search for..."
+    placeholder="Type a city name to search for"
   />
   <p>검색 중인 도시: {{ searchQuery }}</p>
 </template>

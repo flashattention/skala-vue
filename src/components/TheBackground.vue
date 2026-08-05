@@ -447,32 +447,32 @@ onUnmounted(() => {
 
 :deep(.calf-1) {
   animation-name: walk-right;
-  animation-duration: 18s;
+  animation-duration: 36s;
   animation-delay: 0s;
 }
 :deep(.calf-2) {
   animation-name: walk-left;
-  animation-duration: 22s;
+  animation-duration: 44s;
   animation-delay: 4s;
 }
 :deep(.calf-3) {
   animation-name: walk-right;
-  animation-duration: 25s;
+  animation-duration: 50s;
   animation-delay: 10s;
 }
 :deep(.calf-4) {
   animation-name: walk-left;
-  animation-duration: 18s;
+  animation-duration: 36s;
   animation-delay: 8s;
 }
 :deep(.calf-5) {
   animation-name: walk-right;
-  animation-duration: 22s;
+  animation-duration: 44s;
   animation-delay: 6s;
 }
 :deep(.calf-6) {
   animation-name: walk-left;
-  animation-duration: 25s;
+  animation-duration: 50s;
   animation-delay: 12s;
 }
 </style>

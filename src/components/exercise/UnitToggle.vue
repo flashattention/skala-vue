@@ -35,5 +35,12 @@ const configStore = useConfigStore()
   button {
     background-color: rgba(0, 0, 0, 0.3);
   }
+
+  @media screen and (max-width: 668px) {
+    flex-direction: column;
+    button {
+      margin: 5px;
+    }
+  }
 }
 </style>

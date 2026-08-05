@@ -1,22 +1,162 @@
 [
-  { "id": "city_01", "name": "Seoul", "country": "KR", "lat": 37.5665, "long": 126.978 },
-  { "id": "city_02", "name": "Tokyo", "country": "JP", "lat": 35.6762, "long": 139.6503 },
-  { "id": "city_03", "name": "Beijing", "country": "CN", "lat": 39.9042, "long": 116.4074 },
-  { "id": "city_04", "name": "Bangkok", "country": "TH", "lat": 13.7563, "long": 100.5018 },
-  { "id": "city_05", "name": "Singapore", "country": "SG", "lat": 1.3521, "long": 103.8198 },
-  { "id": "city_06", "name": "Sydney", "country": "AU", "lat": -33.8688, "long": 151.2093 },
-  { "id": "city_07", "name": "London", "country": "GB", "lat": 51.5074, "long": -0.1278 },
-  { "id": "city_08", "name": "Paris", "country": "FR", "lat": 48.8566, "long": 2.3522 },
-  { "id": "city_09", "name": "Berlin", "country": "DE", "lat": 52.52, "long": 13.405 },
-  { "id": "city_10", "name": "Rome", "country": "IT", "lat": 41.9028, "long": 12.4964 },
-  { "id": "city_11", "name": "New York", "country": "US", "lat": 40.7128, "long": -74.006 },
-  { "id": "city_12", "name": "Los Angeles", "country": "US", "lat": 34.0522, "long": -118.2437 },
-  { "id": "city_13", "name": "Toronto", "country": "CA", "lat": 43.6532, "long": -79.3832 },
-  { "id": "city_14", "name": "Sao Paulo", "country": "BR", "lat": -23.5505, "long": -46.6333 },
-  { "id": "city_15", "name": "Buenos Aires", "country": "AR", "lat": -34.6037, "long": -58.3816 },
-  { "id": "city_16", "name": "Cairo", "country": "EG", "lat": 30.0444, "long": 31.2357 },
-  { "id": "city_17", "name": "Dubai", "country": "AE", "lat": 25.2048, "long": 55.2708 },
-  { "id": "city_18", "name": "Mumbai", "country": "IN", "lat": 19.076, "long": 72.8777 },
-  { "id": "city_19", "name": "Istanbul", "country": "TR", "lat": 41.0082, "long": 28.9784 },
-  { "id": "city_20", "name": "Cape Town", "country": "ZA", "lat": -33.9249, "long": 18.4241 }
+  {
+    "id": "city_01",
+    "name": "Seoul",
+    "country": "KR",
+    "lat": 37.5665,
+    "long": 126.978,
+    "timezone": "Asia/Seoul"
+  },
+  {
+    "id": "city_02",
+    "name": "Tokyo",
+    "country": "JP",
+    "lat": 35.6762,
+    "long": 139.6503,
+    "timezone": "Asia/Tokyo"
+  },
+  {
+    "id": "city_03",
+    "name": "Beijing",
+    "country": "CN",
+    "lat": 39.9042,
+    "long": 116.4074,
+    "timezone": "Asia/Shanghai"
+  },
+  {
+    "id": "city_04",
+    "name": "Bangkok",
+    "country": "TH",
+    "lat": 13.7563,
+    "long": 100.5018,
+    "timezone": "Asia/Bangkok"
+  },
+  {
+    "id": "city_05",
+    "name": "Singapore",
+    "country": "SG",
+    "lat": 1.3521,
+    "long": 103.8198,
+    "timezone": "Asia/Singapore"
+  },
+  {
+    "id": "city_06",
+    "name": "Sydney",
+    "country": "AU",
+    "lat": -33.8688,
+    "long": 151.2093,
+    "timezone": "Australia/Sydney"
+  },
+  {
+    "id": "city_07",
+    "name": "London",
+    "country": "GB",
+    "lat": 51.5074,
+    "long": -0.1278,
+    "timezone": "Europe/London"
+  },
+  {
+    "id": "city_08",
+    "name": "Paris",
+    "country": "FR",
+    "lat": 48.8566,
+    "long": 2.3522,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "id": "city_09",
+    "name": "Berlin",
+    "country": "DE",
+    "lat": 52.52,
+    "long": 13.405,
+    "timezone": "Europe/Berlin"
+  },
+  {
+    "id": "city_10",
+    "name": "Rome",
+    "country": "IT",
+    "lat": 41.9028,
+    "long": 12.4964,
+    "timezone": "Europe/Rome"
+  },
+  {
+    "id": "city_11",
+    "name": "New York",
+    "country": "US",
+    "lat": 40.7128,
+    "long": -74.006,
+    "timezone": "America/New_York"
+  },
+  {
+    "id": "city_12",
+    "name": "Los Angeles",
+    "country": "US",
+    "lat": 34.0522,
+    "long": -118.2437,
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "id": "city_13",
+    "name": "Toronto",
+    "country": "CA",
+    "lat": 43.6532,
+    "long": -79.3832,
+    "timezone": "America/Toronto"
+  },
+  {
+    "id": "city_14",
+    "name": "Sao Paulo",
+    "country": "BR",
+    "lat": -23.5505,
+    "long": -46.6333,
+    "timezone": "America/Sao_Paulo"
+  },
+  {
+    "id": "city_15",
+    "name": "Buenos Aires",
+    "country": "AR",
+    "lat": -34.6037,
+    "long": -58.3816,
+    "timezone": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "id": "city_16",
+    "name": "Cairo",
+    "country": "EG",
+    "lat": 30.0444,
+    "long": 31.2357,
+    "timezone": "Africa/Cairo"
+  },
+  {
+    "id": "city_17",
+    "name": "Dubai",
+    "country": "AE",
+    "lat": 25.2048,
+    "long": 55.2708,
+    "timezone": "Asia/Dubai"
+  },
+  {
+    "id": "city_18",
+    "name": "Mumbai",
+    "country": "IN",
+    "lat": 19.076,
+    "long": 72.8777,
+    "timezone": "Asia/Kolkata"
+  },
+  {
+    "id": "city_19",
+    "name": "Istanbul",
+    "country": "TR",
+    "lat": 41.0082,
+    "long": 28.9784,
+    "timezone": "Europe/Istanbul"
+  },
+  {
+    "id": "city_20",
+    "name": "Cape Town",
+    "country": "ZA",
+    "lat": -33.9249,
+    "long": 18.4241,
+    "timezone": "Africa/Johannesburg"
+  }
 ]

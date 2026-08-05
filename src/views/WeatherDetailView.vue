@@ -73,6 +73,10 @@ const displayTemp = computed(() => {
         </div>
       </div>
     </div>
+
+    <div class="router-link-wrapper">
+      <RouterLink to="/">메인 대시보드로 돌아가기</RouterLink>
+    </div>
   </BaseDashboardCard>
 </template>
 
@@ -89,7 +93,11 @@ const displayTemp = computed(() => {
   flex-direction: column;
   gap: 20px;
   padding: 10px;
-  width: 95%;
+  width: 100%;
+}
+.router-link-wrapper {
+  margin: 20px;
+  text-align: center;
 }
 
 .header {

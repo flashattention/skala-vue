@@ -55,6 +55,7 @@ const handleSelectCard = (city) => {
 }
 
 const handleClickDetail = (city) => {
+  selectedCityInfo.value = city
   router.push('/weather/' + city.id)
 }
 </script>

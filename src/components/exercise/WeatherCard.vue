@@ -28,34 +28,39 @@ const displayTemp = computed(() => {
   }
   return rawTemp
 })
+
+const getCityLocalTime = (timezone) => {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone,
+    hour12: true,
+    hour: 'numeric',
+    minute: '2-digit',
+  }).format(new Date())
+}
 </script>
 
 <template>
   <div class="card" @click.stop="sendSelectCard(city)">
-    <!-- 왼쪽 정보 영역 -->
     <div class="left">
       <div class="city-header">
-        <!-- 국기 이미지 -->
         <img
           v-if="city.country"
           :src="`https://flagcdn.com/24x18/${city.country.toLowerCase()}.png`"
           :alt="city.country"
           class="flag-img"
         />
-        <span class="city-name">{{ city.name }}</span>
-        <span class="condition-badge">{{ city.condition }}</span>
+        <h1 class="city-name">{{ city.name }}</h1>
+        <h1 class="time">{{ getCityLocalTime(city.timezone) }}</h1>
       </div>
 
       <div class="weather-info">
         <span class="temp-text">{{ Math.round(displayTemp) }}{{ configStore.unitSymbol }}</span>
-
-        <!-- 온도에 따른 상태 뱃지 -->
+        <span class="condition-badge">{{ city.condition }}</span>
         <span v-if="city.temp >= 25" class="status-badge hot"> 🔥 더움 </span>
         <span v-else class="status-badge cool"> ❄️ 선선함 </span>
       </div>
     </div>
 
-    <!-- 오른쪽 버튼 영역 -->
     <div class="right">
       <button class="detail-btn" @click.stop="sendClickDetail(city)">상세보기</button>
     </div>
@@ -103,15 +108,15 @@ const displayTemp = computed(() => {
 }
 
 .city-name {
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1e293b;
 }
 
 .condition-badge {
   font-size: 0.8rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color: rgba(0, 0, 0, 0.7);
   padding: 2px 8px;
   border-radius: 12px;
 }

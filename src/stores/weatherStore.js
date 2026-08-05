@@ -28,6 +28,7 @@ export const useWeatherStore = defineStore('weather', {
             country: city.country,
             lat: city.lat,
             long: city.long,
+            timezone: city.timezone,
             temp: weatherData.main.temp,
             humidity: weatherData.main.humidity,
             condition: weatherData.weather[0].main,

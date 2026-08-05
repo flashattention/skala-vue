@@ -18,9 +18,9 @@ onMounted(() => {
 
 <template>
   <TheBackground :city-id="cityId" :weather="weather" />
+  <h1>World Weather</h1>
   <div class="app">
-    <h1>World Weather</h1>
-    <BaseDashboardCard
+    <BaseDashboardCard class="nav"
       ><div>
         <RouterLink to="/">Home</RouterLink>
       </div>
@@ -43,17 +43,22 @@ onMounted(() => {
 </template>
 
 <style scoped>
+h1 {
+  text-align: center;
+}
 .app {
   position: relative;
   z-index: 1;
   height: 80vh;
-  width: 60vw;
+  width: 80vw;
+  max-width: 800px;
   overflow-y: scroll;
   scrollbar-color: #888888 transparent;
+  scrollbar-gutter: stable;
   h1 {
     text-align: center;
   }
-  .base-dashboard {
+  .nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
