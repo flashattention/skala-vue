@@ -11,9 +11,6 @@ import UnitToggle from './exercise/UnitToggle.vue'
     <div>
       <RouterLink to="/about">About</RouterLink>
     </div>
-    <div>
-      <RouterLink to="/weather/0">Detail</RouterLink>
-    </div>
     <UnitToggle />
   </BaseDashboardCard>
 </template>
