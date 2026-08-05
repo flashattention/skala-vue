@@ -101,7 +101,7 @@ const getCityLocalTime = (timezone) => {
 }
 
 .flag-img {
-  margin-right: 2px;
+  margin-right: 3px;
 }
 
 .city-name {

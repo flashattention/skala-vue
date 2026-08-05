@@ -38,7 +38,7 @@ export const landmarkPlacementConfigs = {
   city_14: { bottom: '-3vw', left: '10vw', width: '80vw' },
   city_15: { bottom: '-5vw', left: '10vw', width: '80vw' },
   city_16: { bottom: '-8vw', left: '0', width: '100vw' },
-  city_17: { bottom: '3vw', left: '10vw', width: '80vw' },
+  city_17: { bottom: '2vw', left: '0', width: '100vw' },
   city_18: { bottom: '-5vw', left: '10vw', width: '80vw' },
   city_19: { bottom: '-3vw', left: '10vw', width: '80vw' },
   city_20: { bottom: '-10vw', left: '0', width: '100vw' },
