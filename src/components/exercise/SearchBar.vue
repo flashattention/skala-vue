@@ -1,4 +1,6 @@
 <script setup>
+import BaseDashboardCard from './BaseDashboardCard.vue'
+
 defineProps({
   searchQuery: {
     type: String,
@@ -13,13 +15,15 @@ const sendUpdateQuery = (payload) => {
 </script>
 
 <template>
-  <h1>Search City</h1>
-  <input
-    :value="searchQuery"
-    @input="sendUpdateQuery($event.target.value)"
-    placeholder="Type a city name to search for..."
-  />
-  <h2>Searching: {{ searchQuery }}</h2>
+  <BaseDashboardCard>
+    <h1>Search City</h1>
+    <input
+      :value="searchQuery"
+      @input="sendUpdateQuery($event.target.value)"
+      placeholder="Type a city name to search for..."
+    />
+    <h2>Searching: {{ searchQuery }}</h2>
+  </BaseDashboardCard>
 </template>
 
 <style scoped>

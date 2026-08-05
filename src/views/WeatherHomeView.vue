@@ -62,9 +62,7 @@ const handleClickDetail = (city) => {
 
 <template>
   <div class="block">
-    <BaseDashboardCard>
-      <SearchBar :search-query="searchQuery" @update-query="handleUpdateSearchQuery" />
-    </BaseDashboardCard>
+    <SearchBar :search-query="searchQuery" @update-query="handleUpdateSearchQuery" />
 
     <BaseDashboardCard v-if="filteredWeatherList?.length > 0">
       <h1>World Weathers</h1>
@@ -79,9 +77,9 @@ const handleClickDetail = (city) => {
 
     <BaseDashboardCard v-else>일치하는 도시가 없습니다.</BaseDashboardCard>
 
-    <BaseDashboardCard>
-      <div v-if="!selectedCityInfo?.name">카드를 클릭하거나 검색해 보세요.</div>
-      <div v-else>{{ selectedCityInfo?.name }}이 선택되었습니다.</div>
+    <BaseDashboardCard class="bottom">
+      <div v-if="!selectedCityInfo?.name">Click the card or search for it...</div>
+      <div v-else>{{ selectedCityInfo?.name }} has been selected.</div>
     </BaseDashboardCard>
   </div>
 </template>
@@ -91,5 +89,8 @@ const handleClickDetail = (city) => {
   display: flex;
   flex-direction: column;
   color: rgba(255, 255, 255, 0.9);
+}
+.bottom {
+  font-size: 20px;
 }
 </style>
