@@ -6,6 +6,33 @@ https://skala-vue-delta.vercel.app/
 
 A Vue 3 + Vite weather dashboard that fetches city weather data from OpenWeather and displays search, selection, and detail views.
 
+## 구현한 기능 목록
+
+- 세계 각국 주요 도시 20개의 날씨 조회 및 검색
+  - OpenWeather API를 이용한 실시간 날씨정보 반영
+  - Javascript의 Date()객체를 이용한 각 도시의 현재 시간 표기
+- 선택한 도시에 따라 바뀌는 배경의 랜드마크와 날씨 (실제 날씨 반영)
+- 앱에 대한 간단한 설명을 볼 수 있는 about 페이지
+- 각 국의 날씨와 습도, 위도와 경도 등을 볼 수 있는 디테일 페이지
+- 온도의 단위를 섭씨와 화씨 사이에서 변경할 수 있는 토글 버튼 기능
+
+## 실행 방법
+
+### Environment variables
+
+Create a `.env` file at the project root with:
+
+```env
+VITE_OPEN_WEATHER_API=your_api_key_here
+```
+
+### Quick start
+
+```sh
+npm install
+npm run dev
+```
+
 ## 어려웠던 점과 해결 과정
 
 - OpenWeather API가 로드될 때 까지 첫 화면이 비어보이던 문제
@@ -21,15 +48,6 @@ A Vue 3 + Vite weather dashboard that fetches city weather data from OpenWeather
 - 언덕과 소들이 화면 width에 따라 height의 변경 없이 width만 늘어나던 문제
   - 언덕과 소들의 svg 컴포넌트에 적용되어 있던 스타일 속성을 변경하여 상위 컴포넌트의 길이에 따라 높이와 너비가 같이 변하도록 변경
 
-## Features
-
-- Vue 3 + Vite application
-- Pinia state management for weather data and background state
-- Vue Router for home, weather detail, and about pages
-- Fetches weather for predefined cities using OpenWeather API
-- Search filter and city selection with dynamic background styling
-- Loading/error handling for API requests
-
 ## Project structure highlights
 
 - `src/main.js` — app bootstrap
@@ -40,23 +58,6 @@ A Vue 3 + Vite weather dashboard that fetches city weather data from OpenWeather
 - `src/views/WeatherHomeView.vue` — search and city card dashboard
 - `src/views/WeatherDetailView.vue` — detailed weather view per city
 - `src/assets/cities.json` — predefined city metadata for API queries
-
-## Environment variables
-
-This project expects an OpenWeather API key in Vite env variables.
-
-Create a `.env` file at the project root with:
-
-```env
-VITE_OPEN_WEATHER_API=your_api_key_here
-```
-
-## Quick start
-
-```sh
-npm install
-npm run dev
-```
 
 Open the local URL shown in the terminal.
 
