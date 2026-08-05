@@ -23,7 +23,7 @@ onMounted(() => {
   <div class="app">
     <NavBar />
     <BaseDashboardCard class="loading" v-if="weatherStore.loading">
-      <h1>Fetching Data From OpenWeather API...</h1>
+      <h1>Fetching Data from OpenWeather API...</h1>
       <VueSpinnerIos size="100" />
     </BaseDashboardCard>
     <BaseDashboardCard v-else-if="weatherStore.error"
