@@ -56,8 +56,8 @@ const getCityLocalTime = (timezone) => {
       <div class="weather-info">
         <span class="temp-text">{{ Math.round(displayTemp) }}{{ configStore.unitSymbol }}</span>
         <span class="condition-badge">{{ city.condition }}</span>
-        <span v-if="city.temp >= 25" class="status-badge hot"> 🔥 Hot </span>
-        <span v-else class="status-badge cool"> ❄️ Fresh </span>
+        <span v-if="city.temp >= 25" class="status-badge hot">🔥Hot</span>
+        <span v-else class="status-badge cool">❄️Fresh</span>
       </div>
     </div>
 
@@ -138,7 +138,7 @@ const getCityLocalTime = (timezone) => {
 .status-badge {
   font-size: 1rem;
   font-weight: 600;
-  padding: 3px 8px;
+  padding: 3px 8px 3px 4px;
   border-radius: 6px;
 }
 
